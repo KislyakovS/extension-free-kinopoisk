@@ -1,0 +1,8 @@
+.link-free-kinoposik {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.link-free-kinoposik:hover {
+    text-decoration: none;
+}
