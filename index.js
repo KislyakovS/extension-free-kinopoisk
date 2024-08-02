@@ -4,9 +4,14 @@ const CLASS_NAME = "link-free-kinoposik";
 
 const getRedirectUrl = () => `${HOST}${window.location.pathname}`;
 
-const target = document.querySelector(TARGET_ELEMENT_SELECT);
-target.classList.add(CLASS_NAME);
-
 const onClickTarget = () => window.open(getRedirectUrl(), "_blank").focus;
 
-target?.addEventListener("click", onClickTarget);
+const init = () => {
+  const target = document.querySelector(TARGET_ELEMENT_SELECT);
+  target.classList.add(CLASS_NAME);
+
+  target?.addEventListener("click", onClickTarget);
+};
+
+init();
+navigation.addEventListener("navigate", init);
