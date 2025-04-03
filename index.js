@@ -16,9 +16,11 @@ const init = () => {
   }
 };
 
-// init()
+const isUrlContentPage = (url) => url.includes('/film/') || url.includes('/series/')
+
+init()
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status === "complete" && (tab.url.includes('/film/') || tab.url.includes('/series/'))) {
+    if (changeInfo.status === "complete" && isUrlContentPage(tab.url)) {
         init();
     }
 });
