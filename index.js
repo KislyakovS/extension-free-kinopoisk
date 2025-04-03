@@ -16,7 +16,7 @@ const init = () => {
   }
 };
 
-init()
+// init()
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status === "complete" && (tab.url.includes('/film/') || tab.url.includes('/series/'))) {
         init();
