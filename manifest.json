@@ -3,11 +3,12 @@
   "version": "0.2",
   "manifest_version": 3,
   "permissions": ["tabs"],
+  "host_permissions": ["https://www.kinopoisk.ru/film/*", "https://www.kinopoisk.ru/series/*"],
   "content_scripts": [
     {
       "js": ["index.js"],
       "css": ["styles.css"],
-      "matches": ["https://www.kinopoisk.ru/*"]
+      "matches": ["https://www.kinopoisk.ru/film/*", "https://www.kinopoisk.ru/series/*"]
     }
   ],
   "action": {
