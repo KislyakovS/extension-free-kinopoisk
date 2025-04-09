@@ -19,8 +19,8 @@ const init = () => {
 const isUrlContentPage = (url) => url.includes('/film/') || url.includes('/series/')
 
 init()
-chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status === "complete" && isUrlContentPage(tab.url)) {
-        init();
-    }
+navigation.addEventListener("navigate", () => {
+  if (isUrlContentPage(window.location.pathname)) {
+    init();
+  }
 });
